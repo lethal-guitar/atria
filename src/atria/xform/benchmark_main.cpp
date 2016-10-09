@@ -71,6 +71,7 @@ ABL_DISABLE_WARNINGS
 ABL_RESTORE_WARNINGS
 
 #include <cstdlib>
+#include <sstream>
 
 namespace atria {
 namespace xform {
