@@ -60,7 +60,8 @@
     __pragma(warning(disable: 4127)) \
     __pragma(warning(disable: 4244)) \
     __pragma(warning(disable: 4251)) \
-    __pragma(warning(disable: 4800))
+    __pragma(warning(disable: 4800)) \
+    __pragma(warning(disable: 4996))
 
   #define ABL_RESTORE_WARNINGS \
     __pragma(warning(pop))
