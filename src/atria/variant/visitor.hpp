@@ -94,8 +94,8 @@ public:
 template<typename T, typename U=ReturnType>
   auto operator() (T&& x)
     -> estd::enable_if_t<
-        !std::is_void<decltype(impl_(std::forward<T>(x)))>{} ||
-         std::is_void<U>{},
+        !std::is_void<decltype(impl_(std::forward<T>(x)))>::value ||
+         std::is_void<U>::value,
       ReturnType>
   {
     return impl_(std::forward<T>(x));
@@ -104,8 +104,8 @@ template<typename T, typename U=ReturnType>
   template<typename T, typename U=ReturnType>
   auto operator() (T&& x)
     -> estd::enable_if_t<
-         std::is_void<decltype(impl_(std::forward<T>(x)))>{} &&
-        !std::is_void<U>{},
+         std::is_void<decltype(impl_(std::forward<T>(x)))>::value &&
+        !std::is_void<U>::value,
       ReturnType>
   {
     return impl_(std::forward<T>(x)), meta::from_void{};

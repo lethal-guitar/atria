@@ -44,7 +44,7 @@ template <template<typename> class TraitCheckMF,
           typename DestT>
 struct copy_trait
   : std::conditional<
-  TraitCheckMF<OrigT>{},
+  TraitCheckMF<OrigT>::value,
     typename TraitAddMf<DestT>::type,
     DestT>
 {};
